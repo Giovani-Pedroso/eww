@@ -1,0 +1,31 @@
+(defvar styleCharging "color: yellow")
+(defvar styleFull "color: green")
+(defvar styleEmpy "color: red")
+
+(defwidget battery []
+ (box
+  :tooltip "Battery at ${EWW_BATTERY.BAT1.capacity}%"
+  :class "bat "
+  :style {EWW_BATTERY.BAT1.status == "Charging" ? styleCharging : 
+          EWW_BATTERY.BAT1.capacity > 90 ? styleFull :
+          EWW_BATTERY.BAT1.capacity < 31 ? styleEmpy : ""
+          }
+  (iconBat)
+ )
+)
+
+(defwidget iconBat []
+  {EWW_BATTERY.BAT1.status == "Charging" ? "" :
+  EWW_BATTERY.BAT1.capacity > 90 ? "" : 
+  EWW_BATTERY.BAT1.capacity > 70 ? "" : 
+  EWW_BATTERY.BAT1.capacity > 50 ? "" : 
+  EWW_BATTERY.BAT1.capacity > 30 ? "" : 
+  ""
+  }
+)
+ ;; ""
+ ;; ""
+ ;; ""
+ ;; ""
+ ;; ""
+ ;; ""

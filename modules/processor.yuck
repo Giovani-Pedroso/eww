@@ -1,0 +1,14 @@
+(defwidget processor []
+  (box
+
+    :orientation "v"
+    :tooltip "CPU usage ${round(EWW_CPU.avg, 0)}%"
+    :style  {EWW_CPU.avg > 80 ? "color:red" : ""} 
+    ""
+    (circular-progress
+      :value {EWW_CPU.avg} 
+      :thickness 4
+      :start-at 75
+    )
+  )
+)

@@ -1,0 +1,24 @@
+(defvar mee "4")
+(defvar eww2 "~/aur/eww/target/release/eww")
+
+(defwidget menu-button []
+  (box
+    :orientation "v"
+  (button 
+    :onclick "${eww} update mee=2"
+    :valign "center"
+    :halign "center"
+    :style "font-size: 40px"
+  "󰍜"
+  )
+  (button 
+    ;; :onclick "${eww} update mee=1"
+    :onclick "wofi --show=drun"
+    :valign "center"
+    :halign "center"
+    :style "font-size: 40px"
+  "󰍜"
+  )
+  {mee}
+  )
+)

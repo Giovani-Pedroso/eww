@@ -1,0 +1,13 @@
+(defwidget ram []
+  (box
+    :orientation "v"
+  :tooltip "RAM usage ${round(EWW_RAM.used_mem_perc, 0)}%"
+  :style  {EWW_RAM.used_mem_perc > 80 ? "color:red" : ""} 
+  ""
+  (circular-progress
+    :value {EWW_RAM.used_mem_perc} 
+    :thickness 3
+    :start-at 75
+  ) 
+  )
+)

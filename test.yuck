@@ -1,0 +1,42 @@
+
+           :class test
+;; (defwindow example
+;;            :monitor 0
+;;            :geometry (geometry :x "0%"
+;;                                :y "20px"
+;;                                :width "90%"
+;;                                :height "30px"
+;;                                :anchor "top center")
+;;            :stacking "fg"
+;;            :reserve (struts :distance "40px" :side "top")
+;;            :windowtype "dock"
+;;            :wm-ignore false
+;;   (greeter2 :text "Say Oi!"
+;;            :name "Jao")
+;;   )
+
+(defwidget greeter2 [?text name]
+  (box :orientation "horizontal"
+       :halign "center"
+       :class "bar"
+    text
+    ;; (calendar :day 10 :show-details true)
+    (progress :value 100 :fliped false :orientation "v")
+    (scale 
+      :class "scale"
+      :min 0 
+      :max 100)
+    (circular-progress 
+      :value 77
+      :thickness 4
+      ) 
+    ;; (button :onclick "notify-send 'Hello' 'Hello, ${name}'"
+    ;;   "Greet")
+    (literal :content variable_containing_yuck)
+    ))
+
+(defvar variable_containing_yuck
+  "{ cores: [{ core, freq, usage }], avg } (button 'bar'))")
+
+
+

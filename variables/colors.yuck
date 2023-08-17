@@ -1,0 +1,3 @@
+(defvar primary-color "#0f0")
+(defvar secondary-color "#f00")
+(defvar terciary-color "#f00")

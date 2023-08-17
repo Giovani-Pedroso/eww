@@ -1,0 +1,27 @@
+(defwidget processor-h [orientation]
+  (box
+    :orientation orientation 
+    ;; :tooltip "RAM usage ${round(EWW_RAM.used_mem_perc, 0)}%"
+    :class "processor_h ${EWW_CPU.avg > 80 ? "danger" : ""}"
+    "  " 
+    (circular-progress
+      :value {EWW_CPU.avg} 
+      :thickness 3
+      :start-at 75
+    )  
+  )
+  ;; (box
+  ;;   :orientation "h"
+  ;;   :tooltip "CPU usage ${round(EWW_CPU.avg, 0)}%"
+  ;;   :style  "
+  ;;           margin-left: 6px;
+  ;;           ${EWW_CPU.avg > 80 ? "color:red" : ""}
+  ;;           "
+  ;;   ": "
+  ;;   (circular-progress
+  ;;     :value {EWW_CPU.avg} 
+  ;;     :thickness 4
+  ;;     :start-at 75
+  ;;   )
+ ;; )
+)

@@ -1,0 +1,34 @@
+(
+    defwindow uy
+    :monitor 0 ; Can be either a number (X11 and Wayland) or an output name (X11 only).
+    :geometry ; Geometry of the window.
+    (
+        geometry ; Geometry of the window.
+        :anchor "right center" ; Values include top, center, bottom and left, center, right.
+        :x "0" ; Position of the window. Values may be provided in px or %.
+        :y "0" ; Will be relative to anchor.
+        ;; :width "100%" ; Width and height of the window.
+        ;; :height "100%" ; Values may be provided in px or %.
+    )
+
+    :stacking "overlay" ; Possible values: fg, bg, overlay, bottom.
+    :exclusive "false" ; Whether the compositor should reserve space for the window.
+    :focusable "false" ; This is necessary for any widgets that use the keyboard to work.
+
+    (audio_event)
+)
+;; (defwindow test
+;;   :monitor 0
+;;   :exclusive "false"
+;;   :stacking "overlay"
+;;   :geometry
+;;     (geometry :anchor "top left" :x 0 :y 0)
+;;   "test"
+;; )
+;;
+(defwidget audio_event []
+  (eventbox
+    :onhoverlost "../scripts/test.sh"
+    "audio"
+  )
+)

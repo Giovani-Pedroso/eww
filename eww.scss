@@ -1,112 +1,76 @@
+// $bg : #0a0a0a;
+$padding_bar_h: 10px;
+$padding_bar_v: 6px;
+$padding_section_v: 2px;
+$padding_section_h: 8px;
+$yellow_1: #faea8a;
+$yellow_2:#fdd500;
+$red_1: #db042e;
+$red_2:#eb1a2d;
+$red_3:#e1454b;
+$black_1:#4a4b4c;
+$black_2:#404040;
+$black_3:#0a0a0a;
+
 * { 
-  // all: unset;
-  font-family: Monofur;
-  // font-size: 14;
+  all: unset;
+  // background-color:red;
+  // font-family: Monofur;
+  font-size: 12;
+}
+//
+.bar{
+  padding: $padding_bar_v $padding_bar_h;
 }
 
-.workspaces-widget{
-  border-radius: 20px;
-  padding: 10px;
-  margin: 20px;
-  background-color:#4a4a4a
-  // border-radius: 30;
-  // background-color:#0f0;
-} //
-.current{
-  background-color:#3a3a3a
+.start-h, .mid-h, .end-h{
+  border-radius:6px;
+  padding: $padding_section_v $padding_section_h;
+  background-color: $black_3;
+  // background-color: red;
 }
 //
-// tooltip {
-//   border-width: 2px;
-//   border-style:solid;
-//   padding: 30px;
-// r border-radius: 6px;
-//   margin: 10px;
-//   background-color: black; 
-//   
-// }
 //
-// .bat{
-//   // background-color:#0f0
-// }
-//
-// .Charging{
-//
-//   background-color:#0f0
-// }
-//
-// .my{
+// .menu_button{
 //   background-color:green;
-//   // background-color:#1a001a00;
+//   font-size: 200px;
 // }
+.processor_h{
+  font-size: 36px;
+  margin-left: 10px;
+}
+.workspace_entry{
+  margin:2px;
+  // margin-right:6px;
+  border-radius:4px;
+  padding:4px;
+  color: $black_1
+}
+.workspace_entry_selected{
+  font-weight:900;
+  color:$red_1;
+
+}
+.danger{
+  color:red;
+}
 //
-// .end{
-//   background-color: blue;
-//   border-radius: 8px;
-// }
-//
-// .current{
-//   background-color:#3a3a3a
-// }
-//
-// .workspaces-widget{
-//   border-radius: 20px;
-//   padding: 10px;
-//   margin: 20px;
-//   background-color:#4a4a4a
-//   // border-radius: 30;
-//   // background-color:#0f0;
-// } //
-//
-// .workspaces-button{
-//   // background-color:#4a4a4a
-// } //
-//
-// .workspaces-button:hover{
-//   background-color:#4a4a4a
-// } //
-//
-// .empty{
-//   color:#0f0;
-//   font-size: 0;
-// }
-// // .occupied{
-// //   background-color:"#0f0";
-// // }
-// //
-// //
-// //
-// // .example
-// // {
-// //     background-color: darkgreen;
-// //     border: 2px solid white;
-// //     border-radius: 8px;
-// //     padding: 8px;
-// //     margin: 8px;
-// //     margin-right: 0px;
-// // }
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-// // * {
-// //   background-color: #3a3a3a;
-// //   font-size:10px;
-// //   color: #b0b4bc;
-// //   padding: 10px;
-// // }
-//
-// // .scale{
-//   // width:100px;
-//   // background-color:"red"
-// // }
+
+scale{
+  margin-right: 10px;
+}
+
+scale trough {
+  all: unset;
+  background-color: $black_1;
+	color: red;
+  border-radius: 5px;
+  min-height:6px;
+  min-width: 10px;
+  margin: .3rem 0 .3rem 0;
+}
+
+.scale_vol trough highlight {
+  background-color: $red_1;
+  border-radius: 5px;
+}

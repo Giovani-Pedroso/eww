@@ -3,27 +3,36 @@
 (defvar show false)
 (defvar eww "~/aur/eww/target/release/eww")
 
-(defwidget volume []
+(defwidget volume-h []
   (eventbox
   :onhover "${eww} update show=true" 
+  ;; :onhover "${eww} open uy --toggle" 
+  ;; :onclick "${eww} open uy --toggle" 
+
   ;; :onhover "${eww} update show=true" 
   ;; :onhoverlost "${eww} update show=false"
   :onhoverlost "${eww} update show=false"
   (box
 		:tooltip "Volume: ${current-volume}%" 
-    :orientation "v"
+    :orientation "h"
 		:space-evenly "false" 
-	  (revealer :transition "slideup" 
+    :valing 'end'
+    :style "
+          font-size: 16px;
+          font-size: 16px;
+          margin-left: 6px;
+          "
+	  (revealer :transition "slideleft" 
 			:reveal show         
 			:duration "550ms"
       (scale
         :min 0
-        :max 101
-        :height 100
-        ;; :class "volbar" 
+        :max 100
+        :width 100
+        :class "scale_vol" 
 			  :value current-volume 
 			  :flipped true 
-			  :orientation "v"      
+			  :orientation "h"      
 			  :onchange "amixer -D pulse sset Master {}%"
       )    
     )

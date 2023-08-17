@@ -1,0 +1,15 @@
+(defwidget clock-h []
+  ;; :style "background-color: red"
+  (box
+  :style "
+          font-size: 16px;
+          margin-left: 6px;
+          "
+    :orientation "h"
+    :space-evenly false
+    :halign "end"
+      :valign "center"
+    :tooltip {formattime(EWW_TIME, " %H:%M:%S %A %v")} 
+    {formattime(EWW_TIME, "%H:%M")}
+  )
+)

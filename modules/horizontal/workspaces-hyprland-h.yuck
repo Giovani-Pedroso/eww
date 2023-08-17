@@ -1,0 +1,46 @@
+;get the actives workspaces
+(deflisten workspaces :initial "[]" "bash ~/.config/eww/scripts/get-workspaces.sh")
+
+;get the workspaces that the user are
+(deflisten current_workspace :initial "1" "bash ~/.config/eww/scripts/get-active-workspace.sh")
+
+(defwidget workspaces-h []
+  (eventbox 
+    :onscroll "bash ~/.config/eww/scripts/change-active-workspace.sh {} ${current_workspace}" 
+    (box 
+    :width 30
+    :space-evenly false
+    ;; :spacing 10
+    ;;:space-evenly true
+    :orientation "h"
+
+      ;; (label :text "${workspaces}${current_workspace}" :visible false)
+      (for workspace in workspaces
+        (eventbox
+          :tooltip "Go to the window ${workspace.id}"
+          :visible { workspace.id == current_workspace || workspace.windows > 0 ? true : false} 
+          :onclick "hyprctl dispatch workspace ${workspace.id}"
+          :class "workspaces-entries-containers"
+          (box :class "workspace-entry 
+                      ${workspace.id == current_workspace ? "current" : ""} 
+                      ${workspace.windows > 0 ? "occupied" : "empty"}"
+
+    :height 10
+            {
+              workspace.id == 1 ? "一" : 
+              workspace.id == 2 ? "二" :
+              workspace.id == 3 ? "三" :
+              workspace.id == 4 ? "四" :
+              workspace.id == 5 ? "五" :
+              workspace.id == 6 ? "六" :
+              workspace.id == 7 ? "七" :
+              workspace.id == 8 ? "八" :
+              workspace.id == 9 ? "九" :
+              "十"
+               }
+            )
+          )
+        )
+      )
+    )
+  )

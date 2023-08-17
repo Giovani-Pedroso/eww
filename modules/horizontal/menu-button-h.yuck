@@ -1,0 +1,12 @@
+(defvar mee "4")
+(defvar eww2 "~/aur/eww/target/release/eww")
+
+(defwidget menu-button-h []
+  (eventbox 
+  (box
+    :onclick "bash ~/.config/rofi/launchers/type-7/launcher.sh "
+    :class "menu_button"
+    "󰍜"
+  )
+  )
+)

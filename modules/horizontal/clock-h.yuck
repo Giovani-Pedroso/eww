@@ -3,13 +3,15 @@
   (box
   :style "
           font-size: 16px;
-          margin-left: 6px;
+          margin-left: 12px;
+          margin-right: 12px;
           "
     :orientation "h"
     :space-evenly false
     :halign "end"
       :valign "center"
     :tooltip {formattime(EWW_TIME, " %H:%M:%S %A %v")} 
-    {formattime(EWW_TIME, "%H:%M")}
+    "${formattime(EWW_TIME, "%H:%M")}"
+
   )
 )

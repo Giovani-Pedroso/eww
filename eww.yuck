@@ -14,6 +14,8 @@
 (include "./modules/horizontal/clock-h.yuck")
 (include "./modules/horizontal/battery-h.yuck")
 (include "./modules/horizontal/volume-h.yuck")
+
+(include "./modules/horizontal/mic-h.yuck")
 (include "./modules/horizontal/ram-h.yuck")
 (include "./modules/horizontal/processor-h.yuck")
 (include "./variables/colors.yuck")
@@ -44,19 +46,21 @@
       (workspaces-h :orientation "h")
     )
     (box
-      :class "start-h"
+      :class "mid-h"
       :space-evenly false
       :halign "center"
       (ram-h :orientation "h")
+      (clock-h)
       (processor-h :orientation "h")
     )
     (box
-      :class "start-h"
+
+      :class "end-h"
       :halign "end"
       :space-evenly false
       (volume-h)
+      ;; (mic-h)
       (battery-h)
-      (clock-h)
     )
   )
 )

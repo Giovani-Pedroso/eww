@@ -2,13 +2,13 @@
   (box
     :orientation orientation 
     ;; :tooltip "RAM usage ${round(EWW_RAM.used_mem_perc, 0)}%"
-    :class "processor_h ${EWW_CPU.avg > 80 ? "danger" : ""}"
-    "  " 
-    (circular-progress
-      :value {EWW_CPU.avg} 
-      :thickness 3
-      :start-at 75
-    )  
+    :class "processor_h ${EWW_CPU.avg < 40 ?  "" : EWW_CPU.avg < 70 ? "warning" : "danger"}"
+    "   ${round(EWW_CPU.avg,0)}%" 
+    ;; (circular-progress
+    ;;   :value {EWW_CPU.avg} 
+    ;;   :thickness 3
+    ;;   :start-at 75
+    ;; )  
   )
   ;; (box
   ;;   :orientation "h"

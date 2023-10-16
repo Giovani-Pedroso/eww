@@ -1,43 +1,42 @@
 ;;I copy the https://github.com/rxyhn/tokyo
-(defpoll current-volume :interval "1s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
-(defvar show false)
-(defvar eww "~/aur/eww/target/release/eww")
+(defpoll current-mic :interval "1s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+(defvar show-mic false)
+(defvar eww-mic "~/aur/eww/target/release/eww")
 
-(defwidget volume-h []
+(defwidget mic-h []
   (eventbox
-  :onhover "${eww} update show=true" 
+  :onhover "${eww} update show-mic=true" 
   ;; :onhover "${eww} open uy --toggle" 
   ;; :onclick "${eww} open uy --toggle" 
 
   ;; :onhover "${eww} update show=true" 
   ;; :onhoverlost "${eww} update show=false"
-  :onhoverlost "${eww} update show=false"
+  :onhoverlost "${eww} update show-mic=false"
   (box
-		:tooltip "Volume: ${current-volume}%" 
+		:tooltip "Mic volume: ${current-mic}%" 
     :orientation "h"
 		:space-evenly "false" 
     :valing 'end'
     :style "
-          font-size: 16px;
-          font-size: 16px;
+          font-size: 26px;
           margin-left: 6px;
           "
 	  (revealer :transition "slideleft" 
-			:reveal show         
+			:reveal show-mic         
 			:duration "550ms"
       (scale
         :min 0
         :max 100
         :width 100
         :class "scale_vol" 
-			  :value current-volume 
+			  :value current-mic 
 			  :flipped true 
 			  :orientation "h"      
 			  :onchange "amixer -D pulse sset Master {}%"
       )    
     )
-    {current-volume != 0 ? " ": "󰸈 "}
-    
+
+    {current-mic != 0 ? "󰍬 ": "󰍭 "}
   )
   )
 )

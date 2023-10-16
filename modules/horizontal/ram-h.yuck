@@ -2,16 +2,15 @@
   (box
     :orientation orientation 
     ;; :tooltip "RAM usage ${round(EWW_RAM.used_mem_perc, 0)}%"
+    :class "processor_h ${EWW_RAM.used_mem_perc < 40 ?  "" : EWW_RAM.used_mem_perc < 70 ? "warning" : "danger"}"
     :style "
           font-size: 16px;
-          margin-left: 6px;
-          ${EWW_RAM.used_mem_perc > 80 ? "color:red" : ""}
           " 
-    "  " 
-    (circular-progress
-      :value {EWW_RAM.used_mem_perc} 
-      :thickness 3
-      :start-at 75
-    )  
+    "   ${round(EWW_RAM.used_mem_perc, 0)}%" 
+    ;; (circular-progress
+    ;;   :value {EWW_RAM.used_mem_perc} 
+    ;;   :thickness 3
+    ;;   :start-at 75
+    ;; )  
   )
 )

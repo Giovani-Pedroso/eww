@@ -16,18 +16,29 @@ $black_3:#0a0a0a;
   all: unset;
   // background-color:red;
   // font-family: Monofur;
-  font-size: 12;
+  font-size: 11;
 }
 //
 .bar{
-  padding: $padding_bar_v $padding_bar_h;
+  background-color: transparent;
+
+  // margin-top: $padding_bar_h;
+  margin: $padding_bar_v 0px    0px 0px;
 }
 
 .start-h, .mid-h, .end-h{
-  border-radius:6px;
   padding: $padding_section_v $padding_section_h;
   background-color: $black_3;
   // background-color: red;
+}
+.start-h{
+  border-radius:0px 6px 0px 0px;
+}
+.mid-h{
+  border-radius:6px 6px 0px 0px;
+}
+.end-h{
+  border-radius:6px 0px 0px 0px;
 }
 //
 //
@@ -37,22 +48,33 @@ $black_3:#0a0a0a;
 // }
 .processor_h{
   font-size: 36px;
-  margin-left: 10px;
+  color: $black_1;
+  // margin-left: 10px;
 }
 .workspace_entry{
   margin:2px;
   // margin-right:6px;
   border-radius:4px;
   padding:4px;
-  color: $black_1
+  color: $black_1;
+  // font-size: 18;
 }
 .workspace_entry_selected{
   font-weight:900;
-  color:$red_1;
+  // color:$red_1;
+  color:$yellow_1;
 
+}
+.workspace_atention{
+  font-weight:900;
+  background-color: $yellow_1;
+  color: $black_1;
 }
 .danger{
   color:red;
+}
+.warning{
+  color:$yellow_2;
 }
 //
 
@@ -73,4 +95,5 @@ scale trough {
 .scale_vol trough highlight {
   background-color: $red_1;
   border-radius: 5px;
+
 }

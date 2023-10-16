@@ -1,0 +1,10 @@
+
+(defwidget power-button-h []
+  (eventbox 
+    :onclick "bash ~/.config/rofi/powermenu/type-2/powermenu.sh "
+  (box
+    :class "button power_button"
+    "󰐥"
+  )
+  )
+)

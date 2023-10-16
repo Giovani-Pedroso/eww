@@ -27,11 +27,12 @@ $black_3:#0a0a0a;
 }
 
 .start-h, .mid-h, .end-h{
-  padding: $padding_section_v $padding_section_h;
+ padding: $padding_section_v $padding_section_h;
   background-color: $black_3;
   // background-color: red;
 }
 .start-h{
+  padding-left: 0px;
   border-radius:0px 6px 0px 0px;
 }
 .mid-h{
@@ -39,13 +40,30 @@ $black_3:#0a0a0a;
 }
 .end-h{
   border-radius:6px 0px 0px 0px;
+  padding-right: 0px;
 }
 //
 //
-// .menu_button{
-//   background-color:green;
-//   font-size: 200px;
-// }
+.button{
+ padding: $padding_section_v $padding_section_h;
+  font-size: 200px;
+}
+.power_button{
+    margin-left:14px; 
+    font-size: 0px;
+  background-color:$red_1;
+  font-weight:900;
+  border-radius:4px;
+}
+
+.menu_button{
+  background-color:$yellow_1;
+  font-weight:900;
+  color:$black_1;
+  margin-right:6px;
+  border-radius:4px;
+}
+
 .processor_h{
   font-size: 36px;
   color: $black_1;

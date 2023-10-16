@@ -11,10 +11,10 @@
 ;; (include "./modules/horizontal/workspaces-hyprland-h.yuck")
 (include "./modules/horizontal/workspaces-i3-h.yuck")
 (include "./modules/horizontal/menu-button-h.yuck")
+(include "./modules/horizontal/power-button-h.yuck")
 (include "./modules/horizontal/clock-h.yuck")
 (include "./modules/horizontal/battery-h.yuck")
 (include "./modules/horizontal/volume-h.yuck")
-
 (include "./modules/horizontal/mic-h.yuck")
 (include "./modules/horizontal/ram-h.yuck")
 (include "./modules/horizontal/processor-h.yuck")
@@ -43,6 +43,7 @@
       :class "start-h"
       :space-evenly false
       :halign "start"
+      (menu-button-h)
       (workspaces-h :orientation "h")
     )
     (box
@@ -61,6 +62,7 @@
       (volume-h)
       ;; (mic-h)
       (battery-h)
+      (power-button-h)
     )
   )
 )
